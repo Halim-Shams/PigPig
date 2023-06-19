@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>PIG PIG PIG!</title>
+	</head>
+	<body
+		class="flex items-center justify-center w-screen h-screen bg-gradient-to-tl from-yellow-300 via-yellow-400 to-yellow-700"
+	>
+		<main
+			class="bg-gray-300 overflow-hidden flex flex-row h-[38rem] w-9/12 shadow-gray-900/70 rounded-lg shadow-2xl relative"
+		>
+			<section
+				class="bg-yellow-100 flex-1 py-20 text-center flex flex-col justify-between"
+			>
+				<div class="flex flex-col gap-6">
+					<p class="font-mono text-3xl text-gray-900">PLAYER 1</p>
+					<p id="playerOneScore" class="font-mono text-7xl text-orange-400/90">
+						0
+					</p>
+				</div>
+				<div
+					class="bg-orange-400 rounded-md py-2 px-12 flex flex-col self-center items-center justify-center"
+				>
+					<p class="text-gray-100">CURRENT</p>
+					<p id="playerOneCurrentScore" class="text-gray-50 font-mono text-3xl">
+						0
+					</p>
+				</div>
+			</section>
+			<section
+				class="flex flex-col items-center justify-between pt-10 pb-[4.5rem] h-full w-full absolute"
+			>
+				<div class="flex flex-col items-center gap-[4.5rem]">
+					<button
+						id="newGame"
+						class="rounded-full bg-gray-50 text-gray-900 px-4 py-1.5 shadow-xl transition-all active:translate-y-[2px]"
+					>
+						🔁 NEW GAME
+					</button>
+					<div
+						class="bg-slate-400 rounded-md w-16 h-16 shadow-xl overflow-hidden"
+					>
+						<img src="assets/dice1.png" alt="dice" />
+					</div>
+				</div>
+				<div class="flex flex-col items-center gap-4">
+					<button
+						id="rollDice"
+						class="rounded-full bg-gray-50 text-gray-900 px-4 py-1.5 shadow-xl transition-all active:translate-y-px"
+					>
+						🎲 ROLL DICE
+					</button>
+					<button
+						id="hold"
+						class="rounded-full bg-gray-50 text-gray-900 px-4 py-1.5 shadow-xl ease-in-out active:translate-y-px"
+					>
+						📥 HOLD
+					</button>
+				</div>
+			</section>
+			<section
+				class="bg-orange-200 flex-1 py-20 text-center flex flex-col justify-between"
+			>
+				<div class="flex flex-col gap-6">
+					<p class="font-mono text-3xl text-gray-900">PLAYER 2</p>
+					<p id="playerTwoScore" class="font-mono text-7xl text-orange-400/90">
+						0
+					</p>
+				</div>
+				<div
+					class="bg-orange-400 rounded-md py-2 px-12 flex flex-col self-center items-center justify-center"
+				>
+					<p class="text-gray-100">CURRENT</p>
+					<p id="playerTwoCurrentScore" class="text-gray-50 font-mono text-3xl">
+						0
+					</p>
+				</div>
+			</section>
+		</main>
+	</body>
+
+	<script src="script.js"></script>
+</html>
