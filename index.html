@@ -15,6 +15,7 @@
 			<section
 				class="bg-yellow-100 flex-1 py-20 text-center flex flex-col justify-between"
 			>
+				<div id="layer2" class="absolute bg-orange-400/40 inset-0 z-0"></div>
 				<div class="flex flex-col gap-6">
 					<p class="font-mono text-3xl text-gray-900">PLAYER 1</p>
 					<p id="playerOneScore" class="font-mono text-7xl text-orange-400/90">
@@ -31,7 +32,7 @@
 				</div>
 			</section>
 			<section
-				class="flex flex-col items-center justify-between pt-10 pb-[4.5rem] h-full w-full absolute"
+				class="flex flex-col items-center justify-between pt-10 pb-[4.5rem] h-full w-full absolute z-10"
 			>
 				<div class="flex flex-col items-center gap-[4.5rem]">
 					<button
@@ -43,7 +44,7 @@
 					<div
 						class="bg-slate-400 rounded-md w-16 h-16 shadow-xl overflow-hidden"
 					>
-						<img src="assets/dice1.png" alt="dice" />
+						<img id="diceImg" src="assets/dice1.png" alt="dice" />
 					</div>
 				</div>
 				<div class="flex flex-col items-center gap-4">
@@ -62,8 +63,12 @@
 				</div>
 			</section>
 			<section
-				class="bg-orange-200 flex-1 py-20 text-center flex flex-col justify-between"
+				class="bg-yellow-100 flex-1 py-20 text-center flex flex-col justify-between relative"
 			>
+				<div
+					id="layer2"
+					class="absolute bg-orange-400/40 inset-0 z-0 hidden"
+				></div>
 				<div class="flex flex-col gap-6">
 					<p class="font-mono text-3xl text-gray-900">PLAYER 2</p>
 					<p id="playerTwoScore" class="font-mono text-7xl text-orange-400/90">
