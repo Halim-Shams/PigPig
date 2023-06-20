@@ -20,7 +20,25 @@ const holdBtn = document.querySelector('#hold');
 let playerOneCurrentScore = 0;
 let playerTwoCurrentScore = 0;
 
-// Code/Program
+let playerOneScore = 0;
+let playerTwoScore = 0;
+
+// Switch User Function
+const switchUser = () => {
+	if (layer2HTML.classList.contains('hidden')) {
+		layer1HTML.classList.add('hidden');
+		layer2HTML.classList.remove('hidden');
+		playerTwoCurrentScore = 0;
+		playerTwoCurrentScoreHTML.innerHTML = playerTwoCurrentScore;
+	} else if (layer1HTML.classList.contains('hidden')) {
+		layer2HTML.classList.add('hidden');
+		layer1HTML.classList.remove('hidden');
+		playerOneCurrentScore = 0;
+		playerOneCurrentScoreHTML.innerHTML = playerOneCurrentScore;
+	}
+};
+
+// ROLL-DICE BUTTON PRESS
 rollDiceBtn.addEventListener('click', () => {
 	const randomDiceNumber = Math.trunc(Math.random() * 6) + 1;
 	diceBoxHTML.classList.remove('hidden');
@@ -29,17 +47,7 @@ rollDiceBtn.addEventListener('click', () => {
 
 	// Condition
 	if (randomDiceNumber == 1) {
-		if (layer2HTML.classList.contains('hidden')) {
-			layer1HTML.classList.add('hidden');
-			layer2HTML.classList.remove('hidden');
-			playerTwoCurrentScore = 0;
-			playerTwoCurrentScoreHTML.innerHTML = playerTwoCurrentScore;
-		} else if (layer1HTML.classList.contains('hidden')) {
-			layer2HTML.classList.add('hidden');
-			layer1HTML.classList.remove('hidden');
-			playerOneCurrentScore = 0;
-			playerOneCurrentScoreHTML.innerHTML = playerOneCurrentScore;
-		}
+		switchUser();
 	} else {
 		if (layer1HTML.classList.contains('hidden')) {
 			playerOneCurrentScore = playerOneCurrentScore + randomDiceNumber;
@@ -51,4 +59,19 @@ rollDiceBtn.addEventListener('click', () => {
 	}
 });
 
-// HOLD BUTTON
+// HOLD BUTTON PRESS
+holdBtn.addEventListener('click', () => {
+	if (layer1HTML.classList.contains('hidden')) {
+		playerOneScore = playerOneScore + playerOneCurrentScore;
+		playerOneCurrentScore = 0;
+		playerOneScoreHTML.innerHTML = playerOneScore;
+		playerOneCurrentScoreHTML.innerHTML = playerOneCurrentScore;
+		switchUser();
+	} else if (layer2HTML.classList.contains('hidden')) {
+		playerTwoScore = playerTwoScore + playerTwoCurrentScore;
+		playerTwoCurrentScore = 0;
+		playerTwoScoreHTML.innerHTML = playerTwoScore;
+		playerTwoCurrentScoreHTML.innerHTML = playerTwoCurrentScore;
+		switchUser();
+	}
+});
