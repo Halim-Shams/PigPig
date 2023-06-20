@@ -40,6 +40,12 @@ const switchUser = () => {
 	}
 };
 
+// Set Default User
+const setDefaultUser = () => {
+	layer1HTML.classList.add('hidden');
+	layer2HTML.classList.remove('hidden');
+};
+
 // CONFETTI FUNCTION
 const confetttti = () => {
 	const duration = 15 * 1000,
@@ -126,4 +132,18 @@ holdBtn.addEventListener('click', () => {
 		winnerDetecter();
 		switchUser();
 	}
+});
+
+// NEW GAME BUTTON PRESS
+newGameBtn.addEventListener('click', () => {
+	canvas.classList.add('hidden');
+	setDefaultUser();
+	playerOneScore = 0;
+	playerTwoScore = 0;
+	playerOneCurrentScore = 0;
+	playerTwoCurrentScore = 0;
+	playerOneScoreHTML.innerHTML = playerOneScore;
+	playerTwoScoreHTML.innerHTML = playerTwoScore;
+	playerOneCurrentScoreHTML.innerHTML = playerOneCurrentScore;
+	playerTwoCurrentScoreHTML.innerHTML = playerTwoCurrentScore;
 });
